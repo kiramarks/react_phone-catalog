@@ -7,8 +7,6 @@
   align-items: center;
   border: 1px solid $border-section-color;
   box-sizing: border-box;
-  flex-basis: 0;
-  flex-grow: 1;
 
   @media screen and (max-width: $cart-page-medium-breakpoint) {
     width: 272px;
