@@ -1,0 +1,88 @@
+.nav {
+  @media screen and (max-width: $tablets-portrait-breakpoint) {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    transform: translateX(-100%);
+    background-color: white;
+    z-index: 2;
+    overflow-y: hidden;
+    transition: transform 0.3s;
+
+    &--opened {
+      transform: translateX(0);
+    }
+  }
+
+  &__list {
+    display: flex;
+
+    @media screen and (max-width: $tablets-portrait-breakpoint) {
+      margin-top: 120px;
+      margin-left: $container-padding-tablet;
+      flex-direction: column;
+      align-items: flex-start;
+      letter-spacing: 3px;
+      font-size: 24px;
+      color: $primary-color;
+    }
+  }
+
+  &__active-element {
+    display: block;
+    position: absolute;
+    top: 61px;
+    left: 0;
+    bottom: 1px;
+    color: $primary-color;
+    height: 3px;
+    background-color: $primary-color;
+    transition: left 0.3s;
+
+    @media screen and (max-width: $tablets-portrait-breakpoint) {
+      display: none;
+    }
+  }
+
+  &__item {
+    margin-right: 64px;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 0.92;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+
+    @media screen and (max-width: $laptops-breakpoint) {
+      margin-right: 44px;
+    }
+
+    @media screen and (max-width: $tablets-landscape-breakpoint) {
+      margin-right: 32px;
+    }
+
+    @media screen and (max-width: $tablets-portrait-breakpoint) {
+      margin-right: 0;
+      font-size: 26px;
+    }
+  }
+
+  &__link {
+    display: block;
+    line-height: $header-height;
+    color: $secondary-color;
+    @include hover(color, $primary-color, 0.2);
+
+    &--active {
+      @media screen and (max-width: $mobile-landscape-breakpoint) {
+        color: $primary-color;
+      }
+    }
+  }
+}

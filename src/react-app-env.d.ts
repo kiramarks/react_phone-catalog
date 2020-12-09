@@ -12,6 +12,26 @@ interface Product {
   screen: string;
   capacity: string;
   ram: string;
+  quantity?: number;
+}
+
+interface ProductProps {
+  age: number;
+  type: string;
+  id: string;
+  imageUrl: string;
+  name: string;
+  snippet: string;
+  price: number;
+  discount: number;
+  screen: string;
+  capacity: string;
+  ram: string;
+  productCardRef?: (node: any) => void;
+}
+
+interface ProductPaths {
+  [key: string]: string;
 }
 
 interface ProductDetails {
@@ -70,15 +90,33 @@ interface CarouselSlide {
   src: string;
 }
 
+type FavoriteBtnProps = {
+  productId: string;
+  styleSize?: string;
+};
+
+type ProductPriceProps = {
+  price: number;
+  discount: number;
+  styleSize?: string;
+};
+
+type PrimaryBtnProps = {
+  productId: string;
+  styleSize?: string;
+  productPrice: number;
+};
+
 type CarouselSlidesProps = {
   slides: CarouselSlide[];
-  toMove: number;
+  moveSize: number;
   duration: number;
 };
 
-type CarouselRectanglesProps = {
+type CarouselDotsProps = {
   slides: CarouselSlide[];
   active: number;
+  goToSlide: (i: number) => void;
 };
 
 type CarouselControlProps = {
@@ -87,12 +125,8 @@ type CarouselControlProps = {
 };
 
 type SliderProps = {
-  products: Product[];
-  position: number;
-  step: number;
-  frameSize: number;
-  itemWidth: number;
-  animationDuration: number;
+  title: string;
+  selectedProduct?: Product;
 };
 
 type SliderArrowProps = {
@@ -106,17 +140,30 @@ type HeadingProps = {
   title: string;
 };
 
-type SearchProps = {
-  inputValue: string;
-  searchPeople: React.ChangeEventHandler;
-};
-
 interface Category {
   title: string;
   link: string;
 }
 
-type CategoryProps = Category;
+type NavProps = {
+  isNavOpen: boolean;
+  closeNavMenu: () => void;
+};
+
+type CartProps = {
+  isNavOpen: boolean;
+  closeNavMenu: () => void;
+};
+
+type FavoritesProps = {
+  isNavOpen: boolean;
+  closeNavMenu: () => void;
+};
+
+type SandwichProps = {
+  isNavOpen: boolean;
+  toggleSandwich: () => void;
+};
 
 interface NavItem {
   title: string;
@@ -124,4 +171,73 @@ interface NavItem {
   exact: boolean;
 }
 
-type NavItemProps = NavItem;
+type NavList = NavItem[];
+
+interface NavItemProps {
+  title: string;
+  link: string;
+  exact: boolean;
+  onMount: (link: string, ref: any) => void;
+  closeNavMenu: () => void;
+}
+
+interface Match {
+  isExact: boolean;
+  params: {
+    productType: string;
+    productId: string;
+  };
+  path: string;
+  url: string;
+}
+
+interface OptionType {
+  option: string;
+}
+
+type DropdownProps = {
+  list: OptionType[];
+  heading: string;
+};
+
+type DropdownArrowProps = {
+  isListOpen: boolean;
+};
+
+type PaginationProps = {
+  total: number;
+  perPage: number;
+  page: number;
+  changePage: (page: number) => void;
+};
+
+type ProductsAmountProps = {
+  title: string;
+};
+
+type BreadcrumbProps = {
+  label: string;
+  link: string;
+  isLast: boolean;
+};
+
+type ShowcaseBlockProps = {
+  title: string;
+  selectedProduct?: Product;
+};
+
+type ProductGalleryProps = {
+  images: string[];
+  title: string;
+};
+
+type GalleryThumbnailsProps = {
+  images: string[];
+  title: string;
+  currentImageLink: string;
+  handleClick: (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => void;
+};
+
+type CartTotalProps = {
+  cartItems: Product[];
+};

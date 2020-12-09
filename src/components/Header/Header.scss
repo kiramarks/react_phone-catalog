@@ -1,0 +1,83 @@
+.header {
+  height: $header-height;
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  z-index: 1;
+
+  @media screen and(max-width: $mobile-landscape-breakpoint) {
+    height: $header-height-mobile;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid $border-section-color;
+    box-sizing: border-box;
+
+    @media screen and (max-width:$laptops-breakpoint) {
+      padding-right: $container-padding-laptop;
+      padding-left: $container-padding-laptop;
+    }
+
+    @media screen and(max-width: $tablets-landscape-breakpoint) {
+      padding-right: $container-padding-tablet;
+      padding-left: $container-padding-tablet;
+    }
+
+    @media screen and(max-width: $mobile-landscape-breakpoint) {
+      padding-right: 0;
+      padding-left: $container-padding-mobile;
+    }
+  }
+
+  &__flex-wrap {
+    display: flex;
+    align-items: center;
+
+    @media screen and(max-width: $tablets-portrait-breakpoint) {
+      &:nth-child(2) {
+        flex-grow: 1;
+        justify-content: flex-end;
+      }
+    }
+  }
+
+  &__logo {
+    margin-left: 24px;
+    margin-right: 64px;
+
+    @media screen and (max-width:$laptops-breakpoint) {
+      margin-left: 0;
+    }
+
+    @media screen and (max-width: $tablets-landscape-breakpoint) {
+      margin-right: 48px;
+      margin-left: 0;
+    }
+
+    @media screen and (max-width: $tablets-portrait-breakpoint) {
+      margin-right: 0;
+      margin-left: 0;
+    }
+  }
+
+  &__sandwich {
+    @media screen and (max-width: $tablets-portrait-breakpoint) {
+      position: relative;
+      width: 64px;
+      display: flex;
+      align-items: center;
+      z-index: 10;
+    }
+
+    @media screen and (max-width: $mobile-landscape-breakpoint) {
+      position: relative;
+      width: 32px;
+      display: flex;
+      align-items: center;
+      z-index: 10;
+    }
+  }
+}

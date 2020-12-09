@@ -1,0 +1,64 @@
+.section {
+  padding-bottom: 80px;
+
+  @media screen and (max-width: $tablets-landscape-breakpoint) {
+    padding-bottom: 50px;
+  }
+
+  &:first-child {
+    padding-top: 24px;
+  }
+
+  &__heading {
+    margin-bottom: 24px;
+  }
+
+  &__pagination {
+    margin-top: 40px;
+  }
+
+  &__breadcrumbs {
+    margin-bottom: 40px;
+  }
+
+  &__carousel {
+    margin-top: 40px;
+    margin-bottom: 24px;
+
+    @media screen and (max-width: 649px) {
+      margin-top: 40px;
+      margin-bottom: 0;
+    }
+
+    @media screen and (max-width: $mobile-landscape-breakpoint) {
+      margin-top: 20px;
+    }
+  }
+
+  &__dropdowns {
+    margin-top: 40px;
+    display: flex;
+  }
+
+  &__products {
+    margin-top: 24px;
+  }
+
+  &__no-products-info {
+    margin-top: 70px;
+    text-align: center;
+    color: $secondary-color;
+  }
+
+  &__no-favorites-info {
+    margin: 40px 0;
+    text-align: center;
+    color: $secondary-color;
+  }
+}
+
+body {
+  &.nav-open {
+    overflow: hidden;
+  }
+}

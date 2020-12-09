@@ -2,8 +2,24 @@ $primary-color: #313237;
 $secondary-color: #89939a;
 $border-section-color: #e2e6e9;
 $border-btn-color: #b4bdc4;
+$hover-bg-color: #fafbfc;
+$placeholder-color: #b4bdc4;
+$success-color: #27ae60;
 
 $container-width: 1136px;
+$container-padding-laptop: 60px;
+$container-padding-tablet: 40px;
+$container-padding-mobile: 20px;
 $header-height: 64px;
+$header-height-mobile: 48px;
 $product-card-width: 272px;
 $product-card-height: 507px;
+$scrollbar-width: 16px;
+$cart-item-width: 752px;
+
+$laptops-breakpoint:
+  $container-width + $scrollbar-width + $container-padding-laptop * 2;
+$tablets-landscape-breakpoint: 999px;
+$tablets-portrait-breakpoint: 899px;
+$cart-page-medium-breakpoint: 580px;
+$mobile-landscape-breakpoint: 528px;

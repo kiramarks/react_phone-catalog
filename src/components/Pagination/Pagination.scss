@@ -1,0 +1,46 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+    margin-right: 8px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__button {
+    @extend .slider__button;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-color: $border-section-color;
+
+    &--active {
+      color: #fff;
+      background-color: $primary-color;
+      border: 0;
+    }
+
+    &--left,
+    &--right {
+      border-color: $border-btn-color;
+    }
+
+    &--left {
+      margin-right: 16px;
+      background-image: url("../../assets/img/left.svg");
+    }
+
+    &--right {
+      margin-left: 16px;
+      background-image: url("../../assets/img/right.svg");
+    }
+  }
+}

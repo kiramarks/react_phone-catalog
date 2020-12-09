@@ -1,0 +1,65 @@
+.footer {
+  border-top: 1px solid $border-section-color;
+
+  &__container {
+    height: 96px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__link {
+    margin-right: 64px;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 0.92;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: $secondary-color;
+    @include hover(color, $primary-color, 0.2);
+
+    @media screen and (max-width: $mobile-landscape-breakpoint) {
+      margin-right: 20px;
+    }
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+
+  &__top-button-container {
+    width: 118px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media screen and (max-width: $mobile-landscape-breakpoint) {
+      width: auto;
+    }
+  }
+
+  &__paragraph {
+    margin-right: 16px;
+    font-size: 12px;
+    line-height: 15px;
+    color: $secondary-color;
+
+    @media screen and (max-width: $mobile-landscape-breakpoint) {
+      display: none;
+    }
+  }
+
+  &__top-button {
+    width: 32px;
+    height: 32px;
+    border: 1px solid $border-btn-color;
+    background-color: #fff;
+    background-image: url("../../assets/img/footer-top-arrow.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    box-sizing: border-box;
+    cursor: pointer;
+    outline: none;
+    @include hover(border-color, $primary-color, 0.2);
+  }
+}

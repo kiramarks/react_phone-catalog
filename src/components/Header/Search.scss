@@ -1,0 +1,80 @@
+.search {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border-left: 1px solid $border-section-color;
+
+  @media screen and (max-width: $tablets-portrait-breakpoint) {
+    width: 100%;
+  }
+
+  &__input {
+    width: 327px;
+    padding: 23px 46px 23px 23px;
+    height: $header-height;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 600;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    color: $primary-color;
+
+    @media screen and (max-width: $laptops-breakpoint) {
+      width: 250px;
+    }
+
+    @media screen and (max-width: $tablets-landscape-breakpoint) {
+      width: 100%;
+      font-size: 12px;
+      line-height: 14px;
+    }
+
+    @media screen and (max-width: $mobile-landscape-breakpoint) {
+      height: $header-height-mobile;
+    }
+
+    @media screen and (max-width: 414px) {
+      width: 150px;
+      padding: 15px 25px 15px 10px;
+      font-size: 11px;
+      line-height: 14px;
+    }
+
+    &::placeholder {
+      color: $placeholder-color;
+    }
+
+    &:focus {
+      background-color: $hover-bg-color;
+    }
+  }
+
+  &__button {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    right: 20px;
+    top: 47%;
+    border: 0;
+    outline: 0;
+    background-color: transparent;
+    transform: translateY(-50%);
+    background-image: url("../../assets/img/search.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+
+    @media screen and(max-width: $mobile-landscape-breakpoint) {
+      right: 15px;
+    }
+
+    @media screen and (max-width: 414px) {
+      right: 10px;
+    }
+
+    &--clear {
+      cursor: pointer;
+      background-image: url("../../assets/img/clear.svg");
+    }
+  }
+}
